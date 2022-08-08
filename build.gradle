@@ -14,7 +14,9 @@ def junitVersion = "5.8.2",
     slf4jVersion = "1.7.36",
     allureVersion = "2.17.3",
     selenideVersion = "6.4.0",
-    ownerVersion = "1.0.12"
+    ownerVersion = "1.0.12",
+    assertjVersion = "3.23.1",
+    opencsvVersion = "5.6"
 
 dependencies {
     implementation 'org.jetbrains:annotations:20.1.0'
@@ -23,7 +25,10 @@ dependencies {
             "org.slf4j:slf4j-simple:$slf4jVersion",
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
-            "org.aeonbits.owner:owner:$ownerVersion"
+            "org.aeonbits.owner:owner:$ownerVersion",
+            "org.assertj:assertj-core:$assertjVersion",
+            "com.opencsv:opencsv:$opencsvVersion"
+
 
     )
 }
@@ -50,7 +55,6 @@ tasks.withType(JavaCompile) {
 test {
     systemProperties(System.getProperties())
     useJUnitPlatform()
-    systemProperties(System.getProperties())
 
     testLogging {
         lifecycle {
@@ -59,12 +63,5 @@ test {
         }
     }
 
-    task debug(type: Test){
-        useJUnitPlatform {
-            includeTags("debug")
-        }
-        systemProperties(System.getProperties())
-
-    }
 
 }

@@ -1,9 +1,8 @@
+.gradle/*.*
 credential.properties
-*.lock
-*.bin
+src/test/resources/config/*.*
 # Compiled class file
 *.class
-
 # Log file
 *.log
 
@@ -24,7 +23,7 @@ credential.properties
 # Project gen files
 allure.properties
 .idea/
-.gradle/
+
 build/
 bin/
 out/
@@ -38,3 +37,9 @@ target/
 !gradlew*
 !gradle-wrapper.properties
 
+/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+/.gradle/buildOutputCleanup/cache.properties
+/src/test/resources/config/credentials.properties
+/.gradle/vcs-1/gc.properties
+/.gradle/buildOutputCleanup/outputFiles.bin
+/src/test/resources/config/
